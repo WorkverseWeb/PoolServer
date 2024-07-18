@@ -50,7 +50,7 @@ mongoose
   });
 
 app.get("/", (req, res) => {
-  res.send("Hello from Express!");
+  res.send("Hello from Pooldashboard!!");
 });
 
 // Swagger setup
@@ -72,7 +72,7 @@ const swaggerOptions = {
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use("/upload", imageRouter);
 app.use("/users", userRouter);
@@ -87,7 +87,7 @@ app.use("/assignUsers", assignUserRouter);
 app.use("/initialslot", initialslotRouter);
 
 // Start the server
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
